@@ -1,4 +1,3 @@
-<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +5,6 @@
         <title>Test</title>
     </head>
     <body>
-        <p>Bonjour ${ auteur.prenom } ${ auteur.nom }</p>
-        <p>${ auteur.actif ? 'Vous êtes très actif !' : 'Vous êtes inactif !' }</p>
+        <p><c:out value="Bonjour !" /></p>
     </body>
 </html>
