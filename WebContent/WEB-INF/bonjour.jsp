@@ -7,9 +7,7 @@
 <title>Test</title>
 </head>
 <body>
-    <c:if test="${ !empty sessionScope.prenom && !empty sessionScope.nom }">
-        <p>Vous êtes ${ sessionScope.prenom } ${ sessionScope.nom } !</p>
-    </c:if>
+    <c:out value="${ prenom }" />
     <form method="post" action="bonjour">
         <p>
             <label for="nom">Nom : </label>
