@@ -6,16 +6,17 @@
     </head>
     <body>
         <p><c:out value="Bonjour !" /></p>
-		<!-- test -->
-		<c:if test="${ 50 > 10 }" var="variable">
-		    C'est vrai !
-		</c:if>
-		<!-- test multiple -->
-		<c:choose>
-		    <c:when test="${ variable }">Du texte</c:when>
-		    <c:when test="${ autreVariable }">Du texte</c:when>
-		    <c:when test="${ encoreUneAutreVariable }">Du texte</c:when>
-		    <c:otherwise></c:otherwise>
-		</c:choose>
+        <!-- boucle -->
+        <c:forEach var="i" begin="0" end="10" step="2">
+		    <p>Un message n°<c:out value="${ i }" /> !</p>
+		</c:forEach>
+		<!-- boucle sur array -->
+		<c:forEach items="${ titres }" var="titre" varStatus="status">
+		    <p>N°<c:out value="${ status.count }" /> : <c:out value="${ titre }" /> !</p>
+		</c:forEach>
+		<!-- boucle sur chaîne de caractères -->
+		<c:forTokens var="morceau" items="Un élément/Encore un autre élément/Un dernier pour la route" delims="/ ">
+		    <p>${ morceau }</p>
+		</c:forTokens>
     </body>
 </html>

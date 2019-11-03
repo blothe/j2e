@@ -18,13 +18,8 @@ public class Test extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Auteur auteur = new Auteur();
-        auteur.setPrenom("Mathieu");
-        auteur.setNom("Nebra");
-        auteur.setActif(true);
-        
-        request.setAttribute("auteur", auteur);
-        
+    	String[] titres = { "Nouvel incendie", "Une nouvelle île a été découverte", "Chute du dollar" };
+    	request.setAttribute("titres", titres);
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
