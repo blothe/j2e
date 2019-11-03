@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,18 +7,15 @@
         <title>Test</title>
     </head>
     <body>
-        <p><c:out value="Bonjour !" /></p>
-        <!-- boucle -->
-        <c:forEach var="i" begin="0" end="10" step="2">
-		    <p>Un message n°<c:out value="${ i }" /> !</p>
-		</c:forEach>
-		<!-- boucle sur array -->
-		<c:forEach items="${ titres }" var="titre" varStatus="status">
-		    <p>N°<c:out value="${ status.count }" /> : <c:out value="${ titre }" /> !</p>
-		</c:forEach>
-		<!-- boucle sur chaîne de caractères -->
-		<c:forTokens var="morceau" items="Un élément/Encore un autre élément/Un dernier pour la route" delims="/ ">
-		    <p>${ morceau }</p>
-		</c:forTokens>
+
+        <c:if test="${ !empty nom }"><p><c:out value="Bonjour, vous vous appelez ${ nom }" /></p></c:if>
+        
+        <form method="post" action="bonjour">
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" />
+            
+            <input type="submit" />
+        </form>
+        
     </body>
 </html>
